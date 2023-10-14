@@ -6,6 +6,7 @@ import plotly.graph_objs as go
 import numpy as np
 import pandas as pd
 import datetime as dt
+import csv
 
 
 
@@ -21,7 +22,11 @@ app.config.suppress_callback_exceptions = True
 
 #Load data from csv
 def load_data():
-    # To do: Completar la función 
+    file_name = "datos_energia.csv"
+    
+    # Read the CSV file using pandas
+    data = pd.read_csv(file_name, parse_dates=['time'], index_col='time')
+    return data
     
 
 # Cargar datos
